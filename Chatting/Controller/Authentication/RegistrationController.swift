@@ -16,6 +16,7 @@ class RegistrationController: UIViewController {
         button.setImage(#imageLiteral(resourceName: "plus_photo"), for: .normal)
         button.tintColor = .white
         button.addTarget(self, action: #selector(handleSelectPhoto), for: .touchUpInside)
+        button.clipsToBounds = true
         return button
     }()
     
@@ -73,7 +74,9 @@ class RegistrationController: UIViewController {
     // MARK: - Selectors
     
     @objc func handleSelectPhoto() {
-        print("select photo")
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        present(imagePickerController, animated: true, completion: nil)
     }
     
     @objc func handleShowLogIn() {
@@ -101,4 +104,21 @@ class RegistrationController: UIViewController {
         view.addSubview(alreadyHaveAccountButton)
         alreadyHaveAccountButton.anchor(left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingLeft: 32, paddingRight: 32)
     }
+}
+
+// MARK: - UIImagePickerControllerDelegate
+
+extension RegistrationController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let image = info[.originalImage] as? UIImage
+        plusPhotoButton.setImage(image?.withRenderingMode(.alwaysOriginal), for: .normal)
+        plusPhotoButton.layer.borderColor = UIColor(white: 1, alpha: 0.7).cgColor
+        plusPhotoButton.layer.borderWidth = 3
+        plusPhotoButton.layer.cornerRadius = 200/2
+        plusPhotoButton.imageView?.clipsToBounds = true
+        plusPhotoButton.imageView?.contentMode = .scaleAspectFill
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
 }

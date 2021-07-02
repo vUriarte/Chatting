@@ -22,6 +22,7 @@
 		5FCE76D3268B4EB200B79EFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FCE76D2268B4EB200B79EFC /* Assets.xcassets */; };
 		5FCE76D6268B4EB200B79EFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FCE76D4268B4EB200B79EFC /* LaunchScreen.storyboard */; };
 		5FCE76E5268B4F6A00B79EFC /* ConversationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCE76E4268B4F6A00B79EFC /* ConversationsController.swift */; };
+		5FF7604F268F672800A61DEB /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF7604E268F672800A61DEB /* RegistrationViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		5FCE76D5268B4EB200B79EFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5FCE76D7268B4EB200B79EFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5FCE76E4268B4F6A00B79EFC /* ConversationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsController.swift; sourceTree = "<group>"; };
+		5FF7604E268F672800A61DEB /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,7 +129,7 @@
 		5FCE76E1268B4EFC00B79EFC /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				5F813533268E64EC007E19A5 /* LoginViewModel.swift */,
+				5FF76051268F674200A61DEB /* Authentication */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -148,6 +150,15 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		5FF76051268F674200A61DEB /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				5F813533268E64EC007E19A5 /* LoginViewModel.swift */,
+				5FF7604E268F672800A61DEB /* RegistrationViewModel.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FCE76CE268B4EB100B79EFC /* ViewController.swift in Sources */,
+				5FF7604F268F672800A61DEB /* RegistrationViewModel.swift in Sources */,
 				5F813528268DFCA3007E19A5 /* InputContainerView.swift in Sources */,
 				5FCE76CA268B4EB100B79EFC /* AppDelegate.swift in Sources */,
 				5FCE76E5268B4F6A00B79EFC /* ConversationsController.swift in Sources */,
